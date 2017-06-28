@@ -4,16 +4,24 @@
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale= 1">
     <title>Your Representatives</title>
 
+    <!-- link to jquery - needs to stay first! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Firebase - -->
-    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
 
-    <!-- App Styles & JS -->
+    <!-- link to google fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round|Work+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <!-- Firebase - -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+    <!-- App Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
 
 
@@ -29,170 +37,189 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">The Bytemes</a>
+        <p class="logo">
+            <a class="navbar-brand" href="#"><img src="assets/images/kyrLogo.png" width="200" height="100"
+                                                  alt="logo"></a>
+        <p>
     </div> <!-- end navbar-header -->
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse nav navbar-right" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li>
-                <a href="#">About Us</a>
-            </li>
-            <li>
-                <a href="#">Contact Us</a>
-            </li>
-            <li>
-                <a href="#">Legal</a>
-            </li>
+            <li><a href="../voterApp/about_us.html">About Us</a></li>
+            <li><a href="../voterApp/legal.html">Legal</a></li>
         </ul>
     </div><!-- end navbar-collapse -->
 
 </div> <!-- end container -->
 
 
-<!--  setting the state flag within the header image -->
+<!--  setting the giphy within the header image -->
 <header class="image-bg-fluid-height">
-    <img class="img-responsive img-center stateFlag" src="assets/images/co.png" alt="State Flag">
+    <iframe src="https://giphy.com/embed/3osxYrgM8gi9CDjcPu" width="480" height="270" frameBorder="0"
+            class="giphy-embed" allowFullScreen></iframe>
 </header>
 
 <!-- Content Section -->
 <section>
-    <div class="container">
+    <div class="container col-md-12">
         <div class="row">
-            <div class="col-lg-6" id="formArea">
-                <h2 class="section-heading">Your Information</h2>
+            <h2 class="section-heading">Hello!</h2>
+            <p class="section-paragraph">Do you know what your local Senators and Representatives are up to? To find
+                out, please enter your address (apartment numbers/units not necessary)</p>
+        </div> <!-- end div class row -->
 
-                <p class="section-paragraph">Please enter your name and complete street address, with city, state and
-                    zip code (Apartment numbers/units not necessary)</p>
-
-                <form id="voterAddress" data-toggle="validator" role="form">
-                    <div class="form-group col-md-8">
-                        <label for="name">Name</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input class="form-control" id="name" type="text" data-minlength="2" required>
-                            <div class="help-block with-errors"></div>
-                            <!-- to display error messages you have to include a container after the input field with both help-block and with-errors classes -->
-                        </div>
+        <div class="row" id="formBlock">
+            <form id="voterAddress" data-toggle="validator" role="form">
+                <div class="form-group col-md-8 col-md-offset-2">
+                    <label for="name">Name</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input class="form-control required" name="name" id="name" type="text"
+                               data-validation="alphanumeric length" data-validation-length="min2" required>
                     </div>
-                    <div class="form-group col-md-8">
-                        <label for="streetNumber">Street Number</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                            <input class="form-control" id="streetNumber" type="number" data-minlength="1" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
+                </div>
+                <div class="form-group col-md-8 col-md-offset-2">
+                    <label for="streetNumber">Street Number</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input class="form-control required" name="streetNumber" id="streetNumber" type="number"
+                               data-validation="alphanumeric length" data-validation-length="min1" required>
                     </div>
-                    <div class="form-group col-md-8">
-                        <label for="streetName">Street Name</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                            <input class="form-control" id="streetName" type="text" data-minlength="1" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
+                </div>
+                <div class="form-group col-md-8 col-md-offset-2">
+                    <label for="streetName">Street Name</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input class="form-control required" name="streetName" id="streetName" type="text"
+                               data-validation="length" data-validation-length="min1" required>
+
                     </div>
-                    <div class="form-group col-md-8">
-                        <label for="city">City</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                            <input class="form-control" id="city" type="text" data-minlength="3" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
+                </div>
+                <div class="form-group col-md-8 col-md-offset-2">
+                    <label for="city">City</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input class="form-control required" name="city" id="city" type="text" data-validation="length"
+                               data-validation-length="min3" required>
+
                     </div>
-                    <div class="form-group col-md-8">
-                        <label for="state">State</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select required name="state" class="form-control selectpicker">
-                                <option></option>
-                                <option>AL</option>
-                                <option>AK</option>
-                                <option>AZ</option>
-                                <option>AR</option>
-                                <option>CA</option>
-                                <option>CO</option>
-                                <option>CT</option>
-                                <option>DE</option>
-                                <option>DC</option>
-                                <option>FL</option>
-                                <option>GA</option>
-                                <option>HI</option>
-                                <option>ID</option>
-                                <option>IL</option>
-                                <option>IN</option>
-                                <option>IA</option>
-                                <option> KS</option>
-                                <option>KY</option>
-                                <option>LA</option>
-                                <option>MA</option>
-                                <option>MD</option>
-                                <option>MA</option>
-                                <option>MI</option>
-                                <option>MN</option>
-                                <option>MS</option>
-                                <option>MO</option>
-                                <option>MT</option>
-                                <option>NE</option>
-                                <option>NV</option>
-                                <option>NH</option>
-                                <option>NJ</option>
-                                <option>NM</option>
-                                <option>NY</option>
-                                <option>NC</option>
-                                <option>ND</option>
-                                <option>OH</option>
-                                <option>OK</option>
-                                <option>OR</option>
-                                <option>PA</option>
-                                <option>RI</option>
-                                <option>SC</option>
-                                <option>SD</option>
-                                <option>TN</option>
-                                <option>TX</option>
-                                <option>UT</option>
-                                <option>VT</option>
-                                <option>VA</option>
-                                <option>WA</option>
-                                <option>WV</option>
-                                <option>WI</option>
-                                <option>WY</option>
-                            </select>
-                            <div class="help-block with-errors"></div>
-                        </div>
+                </div>
+                <div class="form-group col-md-8 col-md-offset-2">
+                    <label for="state">State</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <input class="form-control required" name="state" id="state" type="text"
+                               data-validation="length" data-validation-length="max2" required>
+
                     </div>
-                    <div class="form-group col-md-8">
-                        <label for="zipCode">Zip Code</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-ok"></i></span>
-                            <input class="form-control" id="zipCode" type="number" data-minlength="5" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
+                </div>
+                <div class="form-group col-md-8 col-md-offset-2">
+                    <label for="zipCode">Zip Code</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-ok"></i></span>
+                        <input class="form-control required" name="zipCode" id="zipCode" type="number"
+                               data-validation="length" data-validation-length="max5" required>
+
                     </div>
-                    <div class="form-group col-md-8">
-                        <button class="btn btn-primary" id="submitAddress" type="submit">Submit</button>
-                    </div>
-                </form>
-
-            </div> <!-- end of first 6 columns div form area-->
-
-            <div class="col-lg-6" id="resultsArea">
-
-                <h2 class="section-heading">Your Results</h2>
-
-                <p class="section-paragraph">Here is the information you need to have your voice heard in the next
-                    election!</p>
-
-            </div> <!-- end of second 6 columns results area -->
-
-        </div> <!-- end of section row -->
-
-    </div> <!-- end of section container -->
+                </div>
+                <div class="form-group col-md-8 col-md-offset-2">
+                    <button class="button btn btn-primary" id="submitAddress" type="submit">Submit</button>
+                </div>
+                <div class="form-group col-md-8 col-md-offset-2">
+                    <button class="btn btn-warning" id="clearAddress" type="submit">Clear Form</button>
+                </div>
+            </form>
+        </div> <!-- end div class row" id formBlock -->
+    </div> <!-- end of division container md-12 -->
+</section> <!-- end of section container -->
 
 
-</section>
+<!-- results section -->
 
+<div class="col-md-10 col-md-offset-1" id="resultsContainer">
+
+    <div class="row panel panel-danger">
+        <div class="panel-heading"><h1>Your Polling Place</h1></div>
+        <div class="panel-body">
+            <!-- <a href=“https://register.rockthevote.com/?partner=36729&source=embed-rtv234x60v1” class=“floatbox” data-fb-options=“width:618 height:max scrolling:yes”>
+             <img src=“http://vr.rockthevote.com/images/widget/rtv-234x60-v1.gif” /> -->
+            </a>
+
+
+        </div>
+    </div>
+
+    <div class="row panel panel-danger">
+        <div class="panel-heading"><h1>Your Senators</h1></div>
+        <div class="panel-body">
+            <div class="senatorInfo1 col-md-4">
+                <ul>
+                    <li class="senator1Pic"></li>
+                    <li class="senator1Name"></li>
+                    <li class="senator1Contact"></li>
+                    <li class="senator1Party"></li>
+                    <li class="senator1Last3"></li>
+                    <li class=senator1Top5></li>
+                </ul>
+            </div>
+            <div class="senatorInfo2 col-md-4 col-md-offset-2">
+                <ul>
+                    <li class="senator2Pic"></li>
+                    <li class="senator2Name"></li>
+                    <li class="senator2Contact"></li>
+                    <li class="senator2Party"></li>
+                    <li class="senator2Last3"></li>
+                    <li class=senator2Top5></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row panel panel-danger">
+        <div class="panel-heading"><h1>Your Representative</h1></div>
+        <div class="panel-body">
+            <div class="repInfo col-md-12">
+                <ul>
+                    <li class="repPic"></li>
+                    <li class="repName"></li>
+                    <li class="repContact"></li>
+                    <li class="repParty"></li>
+                    <li class="repLast3"></li>
+                    <li class=repTop5></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div> <!-- end of section container -->
+
+
+<!-- end results section -->
 
 <aside class="image-bg-fixed-height"></aside>
 
+<!--Here there be Widgets!-->
+
+<!--Register to Vote Button that takes you to a different page-->
+<a href="https://register.rockthevote.com/?partner=36729&source=embed-rtv234x60v1">
+    <img src="http://vr.rockthevote.com/images/widget/rtv-234x60-v1.gif"/>
+</a>
+
+<script type="text/javascript" src="https://tool.votinginfoproject.org/app.js"></script>
+<div id="_vit"></div>
+<script type="text/javascript">vit.load({
+  modal: true,
+  officialOnly: false,
+  title: 'My Polling Place & Ballot Info',
+  width: '640px',
+  height: '480px',
+  colors: {
+    'header': '#229acd',
+    'landscapeBackgroundHeader': '#228a9d'
+  },
+  language: 'en',
+});</script>
 
 <!-- Footer -->
 <footer>
@@ -202,10 +229,10 @@
                 <p>Copyright &copy; The Bytemes 2017</p>
             </div>
         </div>
-        <!-- /.row -->
     </div>
-    <!-- /.container -->
 </footer>
 
 <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+
 </body>

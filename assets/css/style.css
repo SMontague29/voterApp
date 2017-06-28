@@ -1,5 +1,26 @@
 body {
-    margin-top: 50px; 
+    margin-top: 50px;
+    background-color: black;
+
+}
+
+.navbar-brand {
+    position: relative;
+    bottom: 60px;
+}
+
+.logo {
+    border: 200px;
+    padding: 300px;
+    border-radius: 500px;
+    border-style: solid;
+    border-color: yellow;
+}
+
+#voterAddress {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .image-bg-fluid-height,
@@ -8,45 +29,153 @@ body {
 }
 
 .image-bg-fluid-height {
-	background: url('../images/us_flag.jpg') no-repeat center center scroll;
+    background: url('../images/us_flag.jpg') no-repeat center center scroll;
     padding: 100px 0;
 }
 
 .image-bg-fixed-height {
-	background: url('../images/mount-rushmore.jpg') no-repeat center center scroll;
+    background: url('../images/mount-rushmore.jpg') no-repeat center center scroll;
     height: 450px;
-}
-/* state flag picture */
-/* https://statesymbolsusa.org/categories/state-flag*/
-.img-center {
-	margin: 0 auto;
-}
-/* where the user will input their info */
-section {
-    padding: 75px 0;
-    display: inline-block;
-    margin-left: 100px;
-    margin-right: 100px;
 }
 
 .section-heading {
     margin: 30px 0;
 }
 
-form {
-    margin: 30px 0;
-}
-
 footer {
     margin: 50px 0;
     text-align: center;
+    color: yellow;
 }
 
-@media(max-width:600px) {
+h1, label {
+    font-size: 25px;
+    text-align: center;
+    color: #1849b9;
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+}
+
+label {
+    font-size: 16px;
+}
+
+h2 {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+}
+
+section {
+    padding: 75px 0;
+    display: inline-block;
+    margin: 50px;
+    background-color: #f2f2f2;
+    border-radius: 200px;
+}
+
+.alignLeft {
+    text-align: left;
+}
+
+.legalFormat {
+    padding: 0 60px;
+}
+
+a {
+    color: yellow;
+
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    color: yellow;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    color: red;
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+@media (max-width: 600px) {
     section {
         padding-top: 25px;
         padding-bottom: 25px;
     }
 
+}
+
+#resultsContainer {
+    /*  display: none;*/
+
+}
+
+ul {
+    list-style: none;
+}
+
+.senatorInfo1, .senatorInfo2 {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 50px;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.repInfo {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 50px;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
 }
 

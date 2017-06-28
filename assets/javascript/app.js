@@ -9,6 +9,14 @@ var repMap;
 var canIdMap;
 var myReps =[];
 
+// Voter Global variables
+var voterName = "";
+var voterStreetNumber = "";
+var voterStreetName = "";
+var voterCity = "";
+var voterState = "";
+var voterZipCode = "";
+
 //Firebase
 var config = {
   apiKey: "AIzaSyCi-dzO9wATSlwXs5EJCzBMvKjGflTy850",
@@ -30,7 +38,7 @@ $(document).ready(function() {
       "&address="+ streetNum +"%20"+ streetName + "%20"+ city +"%20"+ state + "&roles=legislatorUpperBody&roles=legislatorLowerBody"
 
     $.ajax({
-      url: googleQueryURL,
+      url: "https://cors-anywhere.herokuapp.com/" + googleQueryURL,
       method: "GET"
     }).done(function(response) {
       myGoogleResponse=response;
@@ -54,13 +62,15 @@ $(document).ready(function() {
         method: 'GET'
       }).done(function(res) {
         myFirstOSResponse= JSON.parse(res);
-        repMap = myFirstOSResponse.map(function(rep) { return rep['@attributes'] });
-        canIdMap = repMap.reduce(function(hash, rep) { hash[rep.firstlast] = rep.cid; return hash }, {});
-        for(var i = 0; i < myReps.length; i++) {
-          if(canIdMap.hasOwnProperty(myReps[i].name)) {
-            myReps[i].cid = canIdMap(myReps[i].name)
-          }
-        }
+        repArray= myFirstOSResponse.response.legislator;
+        repMap = repArray.map(function(rep) { return rep['@attributes'] });
+        console.log(repMap);
+        //canIdMap = repMap.reduce(function(hash, rep) { hash[rep.firstlast] = rep.cid; return hash }, {});
+        // for(var i = 0; i < myReps.length; i++) {
+        //   if(canIdMap.hasOwnProperty(myReps[i].name)) {
+        //     myReps[i].cid = canIdMap(myReps[i].name)
+        //   }
+        // }
       });
 
     });
@@ -122,4 +132,76 @@ $(document).ready(function() {
   getGeneralRepInfo("2631", "river dr", "denver", "co");
   //getIndustryDonorsWithCanId("N00006134");
   //getDonorsWithCanId("N00006134");
+
+  $("#submitAddress").on("click", function(event) {
+
+
+    event.preventDefault();
+
+
+    $(".senator1Pic").append("<img src='assets/images/CO.png'>");
+    $(".senator1Contact").html("<p> website </p>");
+    $(".senator1Contact").append("<a href='#'class='fa fa-facebook'></a>");
+    $(".senator1Contact").append("<p> twitter </p>");
+    $(".senator1Contact").append("<p> youTube </p>");
+    $(".senator1Contact").append("<p> phone </p>");
+    $(".senator1Party").html("<p> party </p>");
+    $(".senator1Last3").html("<p> last3 </p>");
+    $(".senator1Top5").html("<p> top5 </p>");
+
+    console.log("this event handler is working");
+    console.log($("#name").val().trim());
+
+
+    console.log('inside the onclick');
+    voterName = $("#name").val().trim();
+    if (!voterName) {
+      alert('please enter your name');
+      return
+    }
+    console.log(voterName);
+
+    voterStreetNumber = $("#streetNumber").val().trim();
+    if (!voterStreetNumber) {
+      alert('please enter your street number');
+      return
+    }
+    console.log(voterStreetNumber);
+
+    voterStreetName = $("#streetName").val().trim();
+    if (!voterStreetName) {
+      alert('please enter your street name');
+      return
+    }
+    console.log(voterStreetName);
+
+    voterCity = $("#city").val().trim();
+    if (!voterCity) {
+      alert('please enter your city');
+      return
+    }
+    console.log(voterCity);
+
+    voterState = $("#state").val().trim();
+    if (!voterState) {
+      alert('please enter your state abbr');
+      return
+    }
+    console.log(voterState);
+
+    voterZipCode = $("#zipCode").val().trim();
+    if (!zipCode) {
+      alert('please enter your zip code');
+      return
+    }
+    console.log(voterZipCode);
+
+  });
+
+  $("#clearAddress").on("click", function(event) {
+    console.log('inside the clear onclick');
+    event.preventDefault();
+    document.getElementById("voterAddress").reset();
+
+  });
 });
