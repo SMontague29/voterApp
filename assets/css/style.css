@@ -1,0 +1,52 @@
+body {
+    margin-top: 50px; 
+}
+
+.image-bg-fluid-height,
+.image-bg-fixed-height {
+    text-align: center;
+}
+
+.image-bg-fluid-height {
+	background: url('../images/us_flag.jpg') no-repeat center center scroll;
+    padding: 100px 0;
+}
+
+.image-bg-fixed-height {
+	background: url('../images/mount-rushmore.jpg') no-repeat center center scroll;
+    height: 450px;
+}
+/* state flag picture */
+/* https://statesymbolsusa.org/categories/state-flag*/
+.img-center {
+	margin: 0 auto;
+}
+/* where the user will input their info */
+section {
+    padding: 75px 0;
+    display: inline-block;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.section-heading {
+    margin: 30px 0;
+}
+
+form {
+    margin: 30px 0;
+}
+
+footer {
+    margin: 50px 0;
+    text-align: center;
+}
+
+@media(max-width:600px) {
+    section {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+}
+

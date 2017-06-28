@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Your Representatives</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Firebase - -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
+    <!-- App Styles & JS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+</head>
+
+<body>
+<div class="container">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">The Bytemes</a>
+    </div> <!-- end navbar-header -->
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#">About Us</a>
+            </li>
+            <li>
+                <a href="#">Contact Us</a>
+            </li>
+            <li>
+                <a href="#">Legal</a>
+            </li>
+        </ul>
+    </div><!-- end navbar-collapse -->
+
+</div> <!-- end container -->
+
+
+<!--  setting the state flag within the header image -->
+<header class="image-bg-fluid-height">
+    <img class="img-responsive img-center stateFlag" src="assets/images/co.png" alt="State Flag">
+</header>
+
+<!-- Content Section -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6" id="formArea">
+                <h2 class="section-heading">Your Information</h2>
+
+                <p class="section-paragraph">Please enter your name and complete street address, with city, state and
+                    zip code (Apartment numbers/units not necessary)</p>
+
+                <form id="voterAddress" data-toggle="validator" role="form">
+                    <div class="form-group col-md-8">
+                        <label for="name">Name</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input class="form-control" id="name" type="text" data-minlength="2" required>
+                            <div class="help-block with-errors"></div>
+                            <!-- to display error messages you have to include a container after the input field with both help-block and with-errors classes -->
+                        </div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="streetNumber">Street Number</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input class="form-control" id="streetNumber" type="number" data-minlength="1" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="streetName">Street Name</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input class="form-control" id="streetName" type="text" data-minlength="1" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="city">City</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input class="form-control" id="city" type="text" data-minlength="3" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="state">State</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <select required name="state" class="form-control selectpicker">
+                                <option></option>
+                                <option>AL</option>
+                                <option>AK</option>
+                                <option>AZ</option>
+                                <option>AR</option>
+                                <option>CA</option>
+                                <option>CO</option>
+                                <option>CT</option>
+                                <option>DE</option>
+                                <option>DC</option>
+                                <option>FL</option>
+                                <option>GA</option>
+                                <option>HI</option>
+                                <option>ID</option>
+                                <option>IL</option>
+                                <option>IN</option>
+                                <option>IA</option>
+                                <option> KS</option>
+                                <option>KY</option>
+                                <option>LA</option>
+                                <option>MA</option>
+                                <option>MD</option>
+                                <option>MA</option>
+                                <option>MI</option>
+                                <option>MN</option>
+                                <option>MS</option>
+                                <option>MO</option>
+                                <option>MT</option>
+                                <option>NE</option>
+                                <option>NV</option>
+                                <option>NH</option>
+                                <option>NJ</option>
+                                <option>NM</option>
+                                <option>NY</option>
+                                <option>NC</option>
+                                <option>ND</option>
+                                <option>OH</option>
+                                <option>OK</option>
+                                <option>OR</option>
+                                <option>PA</option>
+                                <option>RI</option>
+                                <option>SC</option>
+                                <option>SD</option>
+                                <option>TN</option>
+                                <option>TX</option>
+                                <option>UT</option>
+                                <option>VT</option>
+                                <option>VA</option>
+                                <option>WA</option>
+                                <option>WV</option>
+                                <option>WI</option>
+                                <option>WY</option>
+                            </select>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="zipCode">Zip Code</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-ok"></i></span>
+                            <input class="form-control" id="zipCode" type="number" data-minlength="5" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <button class="btn btn-primary" id="submitAddress" type="submit">Submit</button>
+                    </div>
+                </form>
+
+            </div> <!-- end of first 6 columns div form area-->
+
+            <div class="col-lg-6" id="resultsArea">
+
+                <h2 class="section-heading">Your Results</h2>
+
+                <p class="section-paragraph">Here is the information you need to have your voice heard in the next
+                    election!</p>
+
+            </div> <!-- end of second 6 columns results area -->
+
+        </div> <!-- end of section row -->
+
+    </div> <!-- end of section container -->
+
+
+</section>
+
+
+<aside class="image-bg-fixed-height"></aside>
+
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; The Bytemes 2017</p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</footer>
+
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
