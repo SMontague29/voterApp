@@ -30,6 +30,10 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+var normalizeName = function(name) {
+  return name.replace(/ [A-Z]\.? /, ' ')
+}
+
 $(document).ready(function() {
   // AJAX calls
 
@@ -65,12 +69,13 @@ $(document).ready(function() {
         repArray= myFirstOSResponse.response.legislator;
         repMap = repArray.map(function(rep) { return rep['@attributes'] });
         console.log(repMap);
-        //canIdMap = repMap.reduce(function(hash, rep) { hash[rep.firstlast] = rep.cid; return hash }, {});
-        // for(var i = 0; i < myReps.length; i++) {
-        //   if(canIdMap.hasOwnProperty(myReps[i].name)) {
-        //     myReps[i].cid = canIdMap(myReps[i].name)
-        //   }
-        // }
+        canIdMap = repMap.reduce(function(hash, rep) { hash[normalizeName(rep.firstlast)] = rep.cid; return hash }, {});
+        for(var i = 0; i < myReps.length; i++) {
+          var normName = normalizeName(myReps[i].name);
+          if(canIdMap.hasOwnProperty(normName)) {
+            myReps[i].cid = canIdMap[normName];
+          }
+        }
       });
 
     });
