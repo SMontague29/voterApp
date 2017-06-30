@@ -18,21 +18,21 @@ var voterState = "";
 var voterZipCode = "";
 
 //Firebase
-var config = {
-  apiKey: "AIzaSyCi-dzO9wATSlwXs5EJCzBMvKjGflTy850",
-  authDomain: "voterapp-839b2.firebaseapp.com",
-  databaseURL: "https://voterapp-839b2.firebaseio.com",
-  projectId: "voterapp-839b2",
-  storageBucket: "voterapp-839b2.appspot.com",
-  messagingSenderId: "96769787339"
-};
-firebase.initializeApp(config);
+// var config = {
+//   apiKey: "AIzaSyCi-dzO9wATSlwXs5EJCzBMvKjGflTy850",
+//   authDomain: "voterapp-839b2.firebaseapp.com",
+//   databaseURL: "https://voterapp-839b2.firebaseio.com",
+//   projectId: "voterapp-839b2",
+//   storageBucket: "voterapp-839b2.appspot.com",
+//   messagingSenderId: "96769787339"
+// };
+// firebase.initializeApp(config);
 
-var database = firebase.database();
+// var database = firebase.database();
 
-var normalizeName = function(name) {
-  return name.replace(/ [A-Z]\.? /, ' ')
-}
+// var normalizeName = function(name) {
+//   return name.replace(/ [A-Z]\.? /, ' ')
+//}
 
 $(document).ready(function() {
   // AJAX calls
@@ -140,8 +140,32 @@ $(document).ready(function() {
 
   $("#submitAddress").on("click", function(event) {
 
+     $.validate({
+        form : '#voterAddress',
+        onSuccess : function($form) {
+        console.log("Form is valid!");
 
-    event.preventDefault();
+        voterName = $("#name").val().trim();
+        console.log(voterName);
+
+        voterStreetNumber = $("#streetNumber").val().trim();
+        console.log(voterStreetNumber);
+
+        voterStreetName = $("#streetName").val().trim();
+        console.log(voterStreetName);
+
+        voterCity = $("#city").val().trim();
+        console.log(voterCity);
+
+        voterState = $("#state").val().trim();
+        console.log(voterState);
+
+        voterZipCode = $("#zipCode").val().trim();
+        console.log(voterZipCode);
+   
+         }
+    });// end validate function
+//    event.preventDefault();
 
       $(".senator1Pic").append("<img class='repImage' src='assets/images/CO.png'>");
       $(".senator1Contact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
@@ -175,60 +199,13 @@ $(document).ready(function() {
       $(".repLast3").append("<p> last3 </p>")
       $(".repTop5").append("<p> top5 </p>")
 
+   }); //end submit address on click
 
-    console.log("this event handler is working");
-    console.log($("#name").val().trim());
+    $("#clearAddress").on("click", function(event) {
+        console.log('inside the clear onclick');
+        event.preventDefault();
+        document.getElementById("voterAddress").reset();
 
+    }); //end reset form on click
 
-    console.log('inside the onclick');
-    voterName = $("#name").val().trim();
-    if (!voterName) {
-      alert('please enter your name');
-      return
-    }
-    console.log(voterName);
-
-    voterStreetNumber = $("#streetNumber").val().trim();
-    if (!voterStreetNumber) {
-      alert('please enter your street number');
-      return
-    }
-    console.log(voterStreetNumber);
-
-    voterStreetName = $("#streetName").val().trim();
-    if (!voterStreetName) {
-      alert('please enter your street name');
-      return
-    }
-    console.log(voterStreetName);
-
-    voterCity = $("#city").val().trim();
-    if (!voterCity) {
-      alert('please enter your city');
-      return
-    }
-    console.log(voterCity);
-
-    voterState = $("#state").val().trim();
-    if (!voterState) {
-      alert('please enter your state abbr');
-      return
-    }
-    console.log(voterState);
-
-    voterZipCode = $("#zipCode").val().trim();
-    if (!zipCode) {
-      alert('please enter your zip code');
-      return
-    }
-    console.log(voterZipCode);
-
-  });
-
-  $("#clearAddress").on("click", function(event) {
-    console.log('inside the clear onclick');
-    event.preventDefault();
-    document.getElementById("voterAddress").reset();
-
-  });
 });

@@ -71,13 +71,13 @@
         </div> <!-- end div class row -->
 
         <div class="row" id="formBlock">
-            <form id="voterAddress" data-toggle="validator" role="form">
+            <form id="voterAddress" data-toggle="validator" role="form" onsubmit="return false">
                 <div class="form-group col-md-8 col-md-offset-2">
                     <label for="name">Name</label>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <input class="form-control required" name="name" id="name" type="text"
-                               data-validation="alphanumeric length" data-validation-length="min2" required>
+                               data-validation="alphanumeric length required" data-validation-length="min2">
                     </div>
                 </div>
                 <div class="form-group col-md-8 col-md-offset-2">
@@ -85,7 +85,7 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                         <input class="form-control required" name="streetNumber" id="streetNumber" type="number"
-                               data-validation="alphanumeric length" data-validation-length="min1" required>
+                               data-validation="alphanumeric length required" data-validation-length="min1" required>
                     </div>
                 </div>
                 <div class="form-group col-md-8 col-md-offset-2">
@@ -93,7 +93,7 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                         <input class="form-control required" name="streetName" id="streetName" type="text"
-                               data-validation="length" data-validation-length="min1" required>
+                               data-validation="length required" data-validation-length="min1">
 
                     </div>
                 </div>
@@ -101,8 +101,8 @@
                     <label for="city">City</label>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input class="form-control required" name="city" id="city" type="text" data-validation="length"
-                               data-validation-length="min3" required>
+                        <input class="form-control required" name="city" id="city" type="text" data-validation="length required"
+                               data-validation-length="min3">
 
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                         <input class="form-control required" name="state" id="state" type="text"
-                               data-validation="length" data-validation-length="max2" required>
+                               data-validation="length required" data-validation-length="max2">
 
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-ok"></i></span>
                         <input class="form-control required" name="zipCode" id="zipCode" type="number"
-                               data-validation="length" data-validation-length="max5" required>
+                               data-validation="length required" data-validation-length="max5">
 
                     </div>
                 </div>
