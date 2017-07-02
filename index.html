@@ -23,6 +23,9 @@
 
     <!-- App Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 
 </head>
@@ -38,8 +41,7 @@
             <span class="icon-bar"></span>
         </button>
         <p class="logo">
-            <a class="navbar-brand" href="#"><img src="assets/images/kyrLogo.png" width="200" height="100"
-                                                  alt="logo"></a>
+            <a class="navbar-brand" href="index.html"><img src="assets/images/kyrLogo.png" width="200" height="100" alt="logo"></a>
         <p>
     </div> <!-- end navbar-header -->
 
@@ -69,13 +71,13 @@
         </div> <!-- end div class row -->
 
         <div class="row" id="formBlock">
-            <form id="voterAddress" data-toggle="validator" role="form">
+            <form id="voterAddress" data-toggle="validator" role="form" onsubmit="return false">
                 <div class="form-group col-md-8 col-md-offset-2">
                     <label for="name">Name</label>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <input class="form-control required" name="name" id="name" type="text"
-                               data-validation="alphanumeric length" data-validation-length="min2" required>
+                               data-validation="alphanumeric length required" data-validation-length="min2">
                     </div>
                 </div>
                 <div class="form-group col-md-8 col-md-offset-2">
@@ -83,7 +85,7 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                         <input class="form-control required" name="streetNumber" id="streetNumber" type="number"
-                               data-validation="alphanumeric length" data-validation-length="min1" required>
+                               data-validation="alphanumeric length required" data-validation-length="min1" required>
                     </div>
                 </div>
                 <div class="form-group col-md-8 col-md-offset-2">
@@ -91,7 +93,7 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                         <input class="form-control required" name="streetName" id="streetName" type="text"
-                               data-validation="length" data-validation-length="min1" required>
+                               data-validation="length required" data-validation-length="min1">
 
                     </div>
                 </div>
@@ -99,8 +101,8 @@
                     <label for="city">City</label>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input class="form-control required" name="city" id="city" type="text" data-validation="length"
-                               data-validation-length="min3" required>
+                        <input class="form-control required" name="city" id="city" type="text" data-validation="length required"
+                               data-validation-length="min3">
 
                     </div>
                 </div>
@@ -109,7 +111,7 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                         <input class="form-control required" name="state" id="state" type="text"
-                               data-validation="length" data-validation-length="max2" required>
+                               data-validation="length required" data-validation-length="max2">
 
                     </div>
                 </div>
@@ -118,15 +120,15 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-ok"></i></span>
                         <input class="form-control required" name="zipCode" id="zipCode" type="number"
-                               data-validation="length" data-validation-length="max5" required>
+                               data-validation="length required" data-validation-length="max5">
 
                     </div>
                 </div>
                 <div class="form-group col-md-8 col-md-offset-2">
-                    <button class="button btn btn-primary" id="submitAddress" type="submit">Submit</button>
+                    <button class="button btn btn-primary" id="submitAddress" type="submit"><span>Submit</span></button>
                 </div>
                 <div class="form-group col-md-8 col-md-offset-2">
-                    <button class="btn btn-warning" id="clearAddress" type="submit">Clear Form</button>
+                    <button class="clearButton btn btn-warning" id="clearAddress" type="submit"><span>Clear Form</span></button>
                 </div>
             </form>
         </div> <!-- end div class row" id formBlock -->
@@ -138,61 +140,67 @@
 
 <div class="col-md-10 col-md-offset-1" id="resultsContainer">
 
-    <div class="row panel panel-danger">
-        <div class="panel-heading"><h1>Your Polling Place</h1></div>
-        <div class="panel-body">
-            <!-- <a href=“https://register.rockthevote.com/?partner=36729&source=embed-rtv234x60v1” class=“floatbox” data-fb-options=“width:618 height:max scrolling:yes”>
-             <img src=“http://vr.rockthevote.com/images/widget/rtv-234x60-v1.gif” /> -->
-            </a>
+  <div class="row panel panel-info">
+    <div class="panel-heading"><h1>Your Polling Place</h1></div>
+    <div class="panel-body">
+<!-- <a href=“https://register.rockthevote.com/?partner=36729&source=embed-rtv234x60v1” class=“floatbox” data-fb-options=“width:618 height:max scrolling:yes”>
+ <img src=“http://vr.rockthevote.com/images/widget/rtv-234x60-v1.gif” /> -->
+</a>
 
 
-        </div>
     </div>
+  </div>
 
-    <div class="row panel panel-danger">
-        <div class="panel-heading"><h1>Your Senators</h1></div>
-        <div class="panel-body">
-            <div class="senatorInfo1 col-md-4">
-                <ul>
-                    <li class="senator1Pic"></li>
-                    <li class="senator1Name"></li>
-                    <li class="senator1Contact"></li>
-                    <li class="senator1Party"></li>
-                    <li class="senator1Last3"></li>
-                    <li class=senator1Top5></li>
-                </ul>
-            </div>
-            <div class="senatorInfo2 col-md-4 col-md-offset-2">
-                <ul>
-                    <li class="senator2Pic"></li>
-                    <li class="senator2Name"></li>
-                    <li class="senator2Contact"></li>
-                    <li class="senator2Party"></li>
-                    <li class="senator2Last3"></li>
-                    <li class=senator2Top5></li>
-                </ul>
-            </div>
-        </div>
+  <div class="row panel panel-info">
+    <div class="panel-heading"><h1>Your Senators</h1></div>
+    <div class="panel-body">
+      <div class="senatorInfo1 col-md-6 zoomin">
+       <p class="senator1Pic"> </p>
+        <ul class="repList">
+          <li class="senator1Name"> </li>
+          <li class="senator1Contact"> </li>
+          <li class="senator1Party"> </li>
+          <li class="senator1Last3">  </li>
+          <li class=senator1Top5> </li>
+        </ul>
+      </div>
+      <div class="senatorInfo2 col-md-6 zoomin">
+      <p class="senator2Pic"> </p>
+        <ul class="repList">
+          <li class="senator2Name"> </li>
+          <li class="senator2Contact"> </li>
+          <li class="senator2Party"> </li>
+          <li class="senator2Last3">  </li>
+          <li class=senator2Top5> </li>
+        </ul>
+      </div>
     </div>
+  </div>
 
-    <div class="row panel panel-danger">
-        <div class="panel-heading"><h1>Your Representative</h1></div>
-        <div class="panel-body">
-            <div class="repInfo col-md-12">
-                <ul>
-                    <li class="repPic"></li>
-                    <li class="repName"></li>
-                    <li class="repContact"></li>
-                    <li class="repParty"></li>
-                    <li class="repLast3"></li>
-                    <li class=repTop5></li>
-                </ul>
-            </div>
-        </div>
+  <div class="row panel panel-info">
+    <div class="panel-heading"><h1>Your Representative</h1></div>
+    <div class="panel-body">
+     <div class="repInfo col-md-4 col-md-offset-2 repZoomin">
+      <p class="repPic"> </p>
+        <ul class="repList">
+          <li class="repName"> </li>
+          <li class="repContact"> </li>
+          <li class="repParty"> </li>
+          <li class="repLast3">  </li>
+          <li class=repTop5> </li>
+        </ul>
+      </div>
     </div>
+  </div>
+
+
+
 </div>
+               
+        </div> <!-- end of section container -->
 
-</div> <!-- end of section container -->
+
+
 
 
 <!-- end results section -->
@@ -202,6 +210,7 @@
 <!--Here there be Widgets!-->
 
 <!--Register to Vote Button that takes you to a different page-->
+<div class="col-md-6 col-md-offset-3">
 <a href="https://register.rockthevote.com/?partner=36729&source=embed-rtv234x60v1">
     <img src="http://vr.rockthevote.com/images/widget/rtv-234x60-v1.gif"/>
 </a>
@@ -220,6 +229,7 @@
   },
   language: 'en',
 });</script>
+</div>
 
 <!-- Footer -->
 <footer>

@@ -45,7 +45,6 @@ var onAjaxLoadComplete = function() {
   }
 };
 
-
 $(document).ready(function() {
   // AJAX calls
 
@@ -165,6 +164,7 @@ $(document).ready(function() {
   /////////////////////////////////////////// Devon's Stuff  ///////////////////////////////////////////////////////////////////////
 
   $("#submitAddress").on("click", function(event) {
+
     $.validate({
       form: '#voterAddress',
       onSuccess: function($form) {
@@ -189,76 +189,48 @@ $(document).ready(function() {
         console.log(voterZipCode);
 
       }
-    });
-    $("#submitAddress").on("click", function(event) {
-
-      $.validate({
-        form: '#voterAddress',
-        onSuccess: function($form) {
-          console.log("Form is valid!");
-
-          voterName = $("#name").val().trim();
-          console.log(voterName);
-
-          voterStreetNumber = $("#streetNumber").val().trim();
-          console.log(voterStreetNumber);
-
-          voterStreetName = $("#streetName").val().trim();
-          console.log(voterStreetName);
-
-          voterCity = $("#city").val().trim();
-          console.log(voterCity);
-
-          voterState = $("#state").val().trim();
-          console.log(voterState);
-
-          voterZipCode = $("#zipCode").val().trim();
-          console.log(voterZipCode);
-
-        }
-      });// end validate function
+    });// end validate function
 //    event.preventDefault();
 
-      $(".senator1Pic").append("<img class='repImage' src='assets/images/CO.png'>");
-      $(".senator1Contact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
-      $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-facebook-square' style='font-size:24px'></i></a>")
-      $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-twitter' style='font-size:24px'></i><a href='#'>")
-      $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-youtube' style='font-size:24px'></i><a href='#'>")
-      $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-phone-square' style='font-size:24px'></i><a href='#'>")
-      $(".senator1Party").append("<p> party </p>")
-      $(".senator1Last3").append("<p> last3 </p>")
-      $(".senator1Top5").append("<p> top5 </p>")
+    $(".senator1Pic").append("<img class='repImage' src='assets/images/CO.png'>");
+    $(".senator1Contact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
+    $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-facebook-square' style='font-size:24px'></i></a>")
+    $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-twitter' style='font-size:24px'></i><a href='#'>")
+    $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-youtube' style='font-size:24px'></i><a href='#'>")
+    $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-phone-square' style='font-size:24px'></i><a href='#'>")
+    $(".senator1Party").append("<p> party </p>")
+    $(".senator1Last3").append("<p> last3 </p>")
+    $(".senator1Top5").append("<p> top5 </p>")
 
 
-      $(".senator2Pic").append("<img class='repImage' src='assets/images/CO.png'>");
-      $(".senator2Contact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
-      $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-facebook-square' style='font-size:24px'></i></a>")
-      $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-twitter' style='font-size:24px'></i><a href='#'>")
-      $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-youtube' style='font-size:24px'></i><a href='#'>")
-      $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-phone-square' style='font-size:24px'></i><a href='#'>")
-      $(".senator2Party").append("<p> party </p>")
-      $(".senator2Last3").append("<p> last3 </p>")
-      $(".senator2Top5").append("<p> top5 </p>")
+    $(".senator2Pic").append("<img class='repImage' src='assets/images/CO.png'>");
+    $(".senator2Contact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
+    $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-facebook-square' style='font-size:24px'></i></a>")
+    $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-twitter' style='font-size:24px'></i><a href='#'>")
+    $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-youtube' style='font-size:24px'></i><a href='#'>")
+    $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-phone-square' style='font-size:24px'></i><a href='#'>")
+    $(".senator2Party").append("<p> party </p>")
+    $(".senator2Last3").append("<p> last3 </p>")
+    $(".senator2Top5").append("<p> top5 </p>")
 
 
-      $(".repPic").append("<img class='mainepImage' src='assets/images/CO.png'>");
-      $(".repContact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
-      $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-facebook-square' style='font-size:24px'></i></a>")
-      $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-twitter' style='font-size:24px'></i><a href='#'>")
-      $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-youtube' style='font-size:24px'></i><a href='#'>")
-      $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-phone-square' style='font-size:24px'></i><a href='#'>")
-      $(".repParty").append("<p> party </p>")
-      $(".repLast3").append("<p> last3 </p>")
-      $(".repTop5").append("<p> top5 </p>")
+    $(".repPic").append("<img class='mainepImage' src='assets/images/CO.png'>");
+    $(".repContact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
+    $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-facebook-square' style='font-size:24px'></i></a>")
+    $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-twitter' style='font-size:24px'></i><a href='#'>")
+    $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-youtube' style='font-size:24px'></i><a href='#'>")
+    $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-phone-square' style='font-size:24px'></i><a href='#'>")
+    $(".repParty").append("<p> party </p>")
+    $(".repLast3").append("<p> last3 </p>")
+    $(".repTop5").append("<p> top5 </p>")
 
-    }); //end submit address on click
+  }); //end submit address on click
 
-    $("#clearAddress").on("click", function(event) {
-      console.log('inside the clear onclick');
-      event.preventDefault();
-      document.getElementById("voterAddress").reset();
+  $("#clearAddress").on("click", function(event) {
+    console.log('inside the clear onclick');
+    event.preventDefault();
+    document.getElementById("voterAddress").reset();
 
-    }); //end reset form on click
-  });
+  }); //end reset form on click
 
 });
