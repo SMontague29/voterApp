@@ -242,8 +242,9 @@ $(document).ready(function() {
   $("#submitAddress").on("click", function(event) {
 
     $.validate({
-      form: '#voterAddress',
-      onSuccess: function($form) {
+        form : '#voterAddress',
+        showHelpOnFocus : true,
+        onSuccess : function($form) {
         console.log("Form is valid!");
 
         voterName = $("#name").val().trim();
@@ -263,7 +264,6 @@ $(document).ready(function() {
 
         voterZipCode = $("#zipCode").val().trim();
         console.log(voterZipCode);
-
       }
     });// end validate function
    event.preventDefault();
