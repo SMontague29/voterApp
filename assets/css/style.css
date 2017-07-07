@@ -257,7 +257,7 @@ ul {
 
 
 .repImage {
-  width: 50%;
+  width: 30%;
   height: auto;
   float: left;
 }
@@ -265,7 +265,8 @@ ul {
 
 .repList {
   float:right;
-/*  clear:left;*/
+  text-align: center;
+  /* clear:left; */
 }
 
 .zoomin { 
