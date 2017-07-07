@@ -41,11 +41,81 @@ var isAllDataLoaded = function() {
 // This is where all of the rendering of the info from the API call needs to happen. It won't try to render until all the AJAX calls are complete
 var onAjaxLoadComplete = function() {
   if (isAllDataLoaded()) {
-    // TODO: Do whatever you're going to do to render the data here.
-  }
+
+        $(".senator1Name").append(myFirstSenator.name);
+        $(".senator1Pic").append("<img class='repImage' src='" + myFirstSenator.imgSrc + "'>");
+        $(".senator1Contact").append("<p> <a href='" + myFirstSenator.website + "' class='icons'> Access their Website </a> </p>")
+        $(".senator1Contact").append("<a href='https://www.facebook.com/" + myFirstSenator.fb + "' class='icons'> <i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
+        $(".senator1Contact").append("<a href='https://www.twitter.com/" + myFirstSenator.twitter + "' class='icons'> <i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
+        $(".senator1Contact").append("<a href='https://www.youtube.com/" + myFirstSenator.youTube + "' class='icons' ><i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
+        $(".senator1Contact").append(myFirstSenator.phone)
+        $(".senator1Party").append("<p> party <br> <li>" + myFirstSenator.party + " </p>")
+        $(".senator1Last3").append("<p> last 3 <br> <li>" + myFirstSenator.topDonors + " </p>")
+        $(".senator1Top5").append("<p> Industries donating <br> <li>" + myFirstSenator.topIndustryDonors + "</p>")
+
+        $(".senator2Name").append(mySecondSenator.name);
+        $(".senator2Pic").append("<img class='repImage' src='" + mySecondSenator.imgSrc + "'>");
+        $(".senator2Contact").append("<p> <a href='" + mySecondSenator.website + "' class='icons'> Access their Website </a> </p>")
+        $(".senator2Contact").append("<a href='https://www.facebook.com/" + mySecondSenator.fb + "' class='icons' ><i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
+        $(".senator2Contact").append("<a href='https://www.twitter.com/" + mySecondSenator.twitter + "' class='icons'> <i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
+        $(".senator2Contact").append("<a href='https://www.youtube.com/" + mySecondSenator.youTube + "' class='icons' ><i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
+        $(".senator2Contact").append(mySecondSenator.phone)
+        $(".senator2Party").append("<p> party <br> <li>" + mySecondSenator.party + " </p>")
+        $(".senator2Last3").append("<p> last 3 <br> <li>" + mySecondSenator.topDonors + " </p>")
+        $(".senator2Top5").append("<p> Industries donating <br> <li>" + mySecondSenator.topIndustryDonors + "</p>")
+
+        $(".repName").append(myHouseRep.name);
+        $(".repPic").append("<img class='repImage' src='" + myHouseRep.imgSrc + "'>");
+        $(".repContact").append("<p> <a href='" + myHouseRep.website + "' class='icons'> Access their Website </a> </p>")
+        $(".repContact").append("<a href='https://www.facebook.com/"+ myHouseRep.fb + "' class='icons' ><i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
+        $(".repContact").append("<a href='https://www.twitter.com/" + myHouseRep.twitter + "' class='icons'> <i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
+        $(".repContact").append("<a href='https://www.youtube.com/" + myHouseRep.youTube + "' class='icons' ><i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
+        $(".repContact").append(myHouseRep.phone)
+        $(".repParty").append("<p> party <br> <li>" + myHouseRep.party + " </p>")
+        $(".repLast3").append("<p> last 3 <br> <li>" + myHouseRep.topDonors + " </p>")
+        $(".repTop5").append("<p> Industries donating <br> <li>" + myHouseRep.topIndustryDonors + "</p>")
+
+  };
+};
+
+//Checks for Local Storage object and populates values for our API calls if it exists
+var localStorageCheck = function() {
+
+  if (localStorage.name != null) {
+    voterName = localStorage.getItem("Name");
+    voterStreetNumber = localStorage.getItem("Street Number");
+    voterStreetName = localStorage.getItem("Street Name");
+    voterCity = localStorage.getItem("City");
+    voterState = localStorage.getItem("State");
+    voterZipCode = localStorage.getItem("Zip");
+  }};
+
+//If there is a Local Storage object, this function fills the form with the stored data
+var formFill = function() {
+if (localStorage["Name"]) {
+  $("#name").val(localStorage["Name"]);
+}
+if (localStorage["Street Number"]) {
+  $("#streetNumber").val(localStorage["Street Number"]);
+}
+if (localStorage["Street Name"]) {
+  $("#streetName").val(localStorage["Street Name"]);
+}
+if (localStorage["City"]) {
+  $("#city").val(localStorage["City"]);
+}
+if (localStorage["State"]) {
+  $("#state").val(localStorage["State"]);
+}
+if (localStorage["Zip"]) {
+  $("#zipCode").val(localStorage["Zip"]);
+}
 };
 
 $(document).ready(function() {
+
+  localStorageCheck();
+  formFill();
   // AJAX calls
 
   // Function that makes an API call to Google, then an API to Open Secret to get the candidate ID needed for future API calls
@@ -60,7 +130,6 @@ $(document).ready(function() {
       method: "GET"
     }).done(function(response) {
       myGoogleResponse = response;
-      myReps[i].cid, myReps[i]
       // Assigning rep responses to variables
       var senator1 = myGoogleResponse.officials[0];
       var senator2 = myGoogleResponse.officials[1];
@@ -70,6 +139,11 @@ $(document).ready(function() {
       myFirstSenator = parseRepInfoFromGoogle(senator1);
       mySecondSenator = parseRepInfoFromGoogle(senator2);
       myHouseRep = parseRepInfoFromGoogle(houseRep);
+
+    console.log(myFirstSenator);
+    console.log(mySecondSenator);
+    console.log(myHouseRep);
+
 
       // Making list of reps
       var myReps = [myFirstSenator, mySecondSenator, myHouseRep];
@@ -194,11 +268,19 @@ $(document).ready(function() {
     });// end validate function
    event.preventDefault();
 
+   voterName = $("#name").val().trim();
+    voterStreetNumber = $("#streetNumber").val().trim();
+    voterStreetName = $("#streetName").val().trim();
+    voterCity = $("#city").val().trim();
+    voterState = $("#state").val().trim();
+    voterZipCode = $("#zipCode").val().trim();
 
 // display results container on click of submit button--this js snippet will go somewhere else later when scott has done a merge
 $('#resultsContainer').css("display","block");
 window.scrollBy(0, 2500);
 $('#myModal').css("display","none");
+
+    getGeneralRepInfo(voterStreetNumber, voterStreetName, voterCity, voterState);
 
       $(".senator1Name").empty();
       $(".senator1Pic").empty();
@@ -231,37 +313,48 @@ $('#myModal').css("display","none");
       $(".repLast3").empty();
       $(".repTop5").empty();
 
-    $(".senator1Pic").append("<img class='repImage' src='assets/images/CO.png'>");
-    $(".senator1Contact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
-    $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
-    $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
-    $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
-    $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-phone-square' style='font-size:50px'></i><a href='#'>")
-    $(".senator1Party").append("<p> party </p>")
-    $(".senator1Last3").append("<p> last3 </p>")
-    $(".senator1Top5").append("<p> top5 </p>")
+      // function saveMe (){
+      //   $(".senator1Pic").append("<img class='repImage' src='assets/images/CO.png'>");
+      //   $(".senator1Contact").append("<p> <a href='" + myFirstSenator.website + "' class='icons'> www.placeholder.com </a> </p>")
+      //   $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
+      //   $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
+      //   $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
+      //   $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-phone-square' style='font-size:50px'></i><a href='#'>")
+      //   $(".senator1Party").append("<p> party </p>")
+      //   $(".senator1Last3").append("<p> last3 </p>")
+      //   $(".senator1Top5").append("<p> top5 </p>")
 
 
-    $(".senator2Pic").append("<img class='repImage' src='assets/images/CO.png'>");
-    $(".senator2Contact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
-    $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
-    $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
-    $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
-    $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-phone-square' style='font-size:50px'></i><a href='#'>")
-    $(".senator2Party").append("<p> party </p>")
-    $(".senator2Last3").append("<p> last3 </p>")
-    $(".senator2Top5").append("<p> top5 </p>")
+      //   $(".senator2Pic").append("<img class='repImage' src='assets/images/CO.png'>");
+      //   $(".senator2Contact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
+      //   $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
+      //   $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
+      //   $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
+      //   $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-phone-square' style='font-size:50px'></i><a href='#'>")
+      //   $(".senator2Party").append("<p> party </p>")
+      //   $(".senator2Last3").append("<p> last3 </p>")
+      //   $(".senator2Top5").append("<p> top5 </p>")
 
 
-    $(".repPic").append("<img class='repImage' src='assets/images/CO.png'>");
-    $(".repContact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
-    $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
-    $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
-    $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
-    $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-phone-square' style='font-size:50px'></i><a href='#'>")
-    $(".repParty").append("<p> party </p>")
-    $(".repLast3").append("<p> last3 </p>")
-    $(".repTop5").append("<p> top5 </p>")
+      //   $(".repPic").append("<img class='repImage' src='assets/images/CO.png'>");
+      //   $(".repContact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
+      //   $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
+      //   $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
+      //   $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
+      //   $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-phone-square' style='font-size:50px'></i><a href='#'>")
+      //   $(".repParty").append("<p> party </p>")
+      //   $(".repLast3").append("<p> last3 </p>")
+      //   $(".repTop5").append("<p> top5 </p>")
+      // };
+
+
+    localStorage.setItem("Name", voterName);
+    localStorage.setItem("Street Number", voterStreetNumber);
+    localStorage.setItem("Street Name", voterStreetName);
+    localStorage.setItem("City", voterCity);
+    localStorage.setItem("State", voterState);
+    localStorage.setItem("Zip", voterZipCode);
+
 
   }); //end submit address on click
 
@@ -269,7 +362,6 @@ $('#myModal').css("display","none");
     console.log('inside the clear onclick');
     event.preventDefault();
     document.getElementById("voterAddress").reset();
-
   }); //end reset form on click
 
 });
