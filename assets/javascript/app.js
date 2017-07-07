@@ -85,6 +85,7 @@ $(document).ready(function() {
         repMap = repArray.map(function(rep) {
           return rep['@attributes']
         });
+        // Had to convert names to same format to be able to do a match, got the results to just a map of rep name: cid, set cids as properties
         canIdMap = repMap.reduce(function(hash, rep) {
           hash[normalizeName(rep.firstlast)] = rep.cid;
           return hash
@@ -95,6 +96,7 @@ $(document).ready(function() {
             myReps[i].cid = canIdMap[normName];
           }
         }
+        // Calling the other two API functions and adding the results as properties
         for (var i = 0; i < myReps.length; i++) {
           getIndustryDonorsWithCanId(myReps[i].cid, myReps[i]);
           getDonorsWithCanId(myReps[i].cid, myReps[i]);
