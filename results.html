@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale= 1">
+    <title>Your Representatives</title>
+
+    <!-- link to jquery - needs to stay first! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- link to google fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round|Work+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <!-- Firebase - -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+    <!-- App Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+</head>
+
+<body>
+<div class="container">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <p class="logo">
+            <a class="navbar-brand" href="index.html"><img src="assets/images/kyrLogo.png" width="200" height="100" alt="logo"></a>
+        <p>
+    </div> <!-- end navbar-header -->
+
+    <div class="collapse navbar-collapse nav navbar-right" id="bs-example-navbar-collapse-1">
+        <ul class="navLinks nav navbar-nav">
+            <li><a href="../voterApp/about_us.html">About Us</a></li>
+            <li><a href="../voterApp/legal.html">Legal</a></li>
+            <li>
+                <a href="vote.html">Register to Vote</a>
+            </li>
+        </ul>
+    </div><!-- end navbar-collapse -->
+
+</div> <!-- end container -->
+
+<!-- results section -->
+
+<div class="col-md-10 col-md-offset-1" id="resultsContainer">
+
+  <div class="row panel panel-info">
+    <div class="panel-heading"><h1>Your Polling Place</h1></div>
+    <div class="coloredPanel panel-body">
+<!-- <a href=“https://register.rockthevote.com/?partner=36729&source=embed-rtv234x60v1” class=“floatbox” data-fb-options=“width:618 height:max scrolling:yes”>
+ <img src=“http://vr.rockthevote.com/images/widget/rtv-234x60-v1.gif” /> -->
+</a>
+
+
+    </div>
+  </div>
+
+  <div class="row panel panel-info">
+    <div class="panel-heading"><h1>Your Senators</h1></div>
+    <div class="coloredPanel panel-body">
+      <div class="senatorInfo1 col-md-6 zoomin">
+       <p class="senator1Pic"> </p>
+        <ul class="repList">
+          <li class="senator1Name"> </li>
+          <li class="senator1Contact"> </li>
+          <li class="senator1Party"> </li>
+          <li class="senator1Last3">  </li>
+          <li class=senator1Top5> </li>
+        </ul>
+      </div>
+      <div class="senatorInfo2 col-md-6 zoomin">
+      <p class="senator2Pic"> </p>
+        <ul class="repList">
+          <li class="senator2Name"> </li>
+          <li class="senator2Contact"> </li>
+          <li class="senator2Party"> </li>
+          <li class="senator2Last3">  </li>
+          <li class=senator2Top5> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row panel panel-info">
+    <div class="panel-heading"><h1>Your Representative</h1></div>
+    <div class="coloredPanel panel-body">
+     <div class="repInfo col-md-4 col-md-offset-2 repZoomin">
+      <p class="repPic"> </p>
+        <ul class="repList">
+          <li class="repName"> </li>
+          <li class="repContact"> </li>
+          <li class="repParty"> </li>
+          <li class="repLast3">  </li>
+          <li class=repTop5> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+               
+        </div> <!-- end of section container -->
+
+
+
+
+
+<!-- end results section -->
+
+<aside style="background-color: black"></aside>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; The Bytemes 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </footer>
+
+
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+
+
+</body>

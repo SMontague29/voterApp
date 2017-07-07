@@ -1,9 +1,20 @@
+
+.voteBox {
+ box-shadow:10px 10px 25px 25px black; 
+
+}
+
 .icons {
   color: black;
-  display: inline-block;
   border: 0px;
   text-align: center;
+
 }
+
+.icons:hover {
+  color: green;
+}
+
 body {
     margin-top: 50px; 
     background-color: black;
@@ -15,6 +26,9 @@ body {
   bottom: 60px;
 }
 
+li {
+   font-family: 'Varela Round', sans-serif;
+}
 
 #voterAddress {
     display: inline-block;
@@ -23,7 +37,6 @@ body {
 }
 
 
-.image-bg-fluid-height,
 .image-bg-fixed-height {
     text-align: center;
 }
@@ -31,14 +44,18 @@ body {
 .image-bg-fluid-height {
     background: url('../images/us_flag.jpg') no-repeat center center scroll;
     padding: 100px 0;
+    text-align: center;
 }
 
 .image-bg-fixed-height {
-    background: url('../images/mount-rushmore.jpg') no-repeat center center scroll;
+    background: url('../images/antique_map_us_small.jpeg') no-repeat center center scroll;
     height: 450px;
 }
 
+.mapBackground {
+  background: url('../images/antique_map_us_small.jpeg') no-repeat center center scroll;
 
+}
 
 .section-heading {
     margin: 30px 0;
@@ -77,12 +94,52 @@ p {
     font-family: 'Work Sans', sans-serif;
 }
 
-section {
-    padding: 75px 0;
+.section-paragraph {
+    padding: 75px 50px;
     display: inline-block;
     margin: 50px;
     background-color: #f2f2f2;
     border-radius: 200px;
+    z-index: 10; 
+    box-shadow:10px 10px 25px 25px black; 
+    
+}
+
+.modal {
+    display: none;  Hidden by default 
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .alignLeft {
@@ -146,7 +203,8 @@ font-family: 'Varela Round', sans-serif;
 
 
 #resultsContainer {
-/*  display: none;*/
+  display: none;
+  background: url('../images/underground.jpg') repeat;
 
 }
 
@@ -169,6 +227,7 @@ ul {
 .senatorInfo1 {
   position: relative;
   right: 25px;
+
 }
 
 .senatorInfo2 {
@@ -184,7 +243,7 @@ ul {
   border-width: 1px;
   width: 66.666%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
+  background-color: #f2f2f2;
 }
 
 .fa {
@@ -197,22 +256,16 @@ ul {
 }
 
 
-
-
 .repImage {
   width: 50%;
   height: auto;
   float: left;
 }
 
-.mainRepImage {
-  width: 55%;
-  text-align: center;
-}
 
 .repList {
   float:right;
-  clear:left;
+/*  clear:left;*/
 }
 
 .zoomin { 
@@ -220,10 +273,12 @@ ul {
   -moz-transition: all 2s ease; 
   -ms-transition: all 2s ease; 
   transition: all 2s ease; 
+
 } 
 
 .zoomin:hover { 
-  width: 40%; 
+
+  width: 40%;
   height: auto; 
 }
 
@@ -249,4 +304,48 @@ ul {
     font-family: 'Varela Round', sans-serif;
     font-size: 15px;
 
+}
+
+.clearButton:hover {
+  background-color: yellow;
+  color: black;
+}
+
+
+.coloredPanel {
+background: url('../images/underground.jpg') repeat;
+}
+
+
+.navLinks:hover {
+background-color: blue;
+}
+
+
+
+.marIcon {
+color: #1899b9;
+font-size: 150px;
+
+}
+.scottIcon {
+color: #18b938;
+font-size: 150px;
+
+}
+.jessIcon {
+color: #b91899;
+font-size: 150px;
+
+}
+
+.devIcon {
+color: #b93818;
+font-size: 150px;
+
+}
+
+
+#_vit {
+   box-shadow:20px 20px 50px 50px black; 
 }

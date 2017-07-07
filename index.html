@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width initial-scale= 1">
-    <title>Your Representatives</title>
+    <title>Know Your Reps</title>
 
     <!-- link to jquery - needs to stay first! -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-
 </head>
 
 <body>
@@ -46,9 +45,12 @@
     </div> <!-- end navbar-header -->
 
     <div class="collapse navbar-collapse nav navbar-right" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
+        <ul class="navLinks nav navbar-nav">
             <li><a href="../voterApp/about_us.html">About Us</a></li>
             <li><a href="../voterApp/legal.html">Legal</a></li>
+            <li>
+                <a href="vote.html">Register to Vote</a>
+            </li>
         </ul>
     </div><!-- end navbar-collapse -->
 
@@ -57,20 +59,21 @@
 
 <!--  setting the giphy within the header image -->
 <header class="image-bg-fluid-height">
-    <iframe src="https://giphy.com/embed/3osxYrgM8gi9CDjcPu" width="480" height="270" frameBorder="0"
-            class="giphy-embed" allowFullScreen></iframe>
+
+      <p class="section-paragraph">Do you know what your local Senators and Representatives are up to? To find out, <button class='modalBtn'> click here </button> and enter your address (apartment numbers/units not necessary)</p>
+
 </header>
 
-<!-- Content Section -->
-<section>
-    <div class="container col-md-12">
-        <div class="row">
-            <h2 class="section-heading">Hello!</h2>
-            <p class="section-paragraph">Do you know what your local Senators and Representatives are up to? To find
-                out, please enter your address (apartment numbers/units not necessary)</p>
-        </div> <!-- end div class row -->
 
-        <div class="row" id="formBlock">
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal container col-md-12">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+      <div class="row" id="formBlock">
+
             <form id="voterAddress" data-toggle="validator" role="form" onsubmit="return false">
                 <div class="form-group col-md-8 col-md-offset-2">
                     <label for="name">Name</label>
@@ -132,17 +135,19 @@
                 </div>
             </form>
         </div> <!-- end div class row" id formBlock -->
-    </div> <!-- end of division container md-12 -->
-</section> <!-- end of section container -->
+    </div> <!-- end of modal-content -->
+</div> <!-- end of modal -->
+
+<aside class="image-bg-fixed-height"></aside>
 
 
 <!-- results section -->
 
-<div class="col-md-10 col-md-offset-1" id="resultsContainer">
+<div class="col-md-12" id="resultsContainer">
 
   <div class="row panel panel-info">
     <div class="panel-heading"><h1>Your Polling Place</h1></div>
-    <div class="panel-body">
+    <div class="coloredPanel panel-body">
 <!-- <a href=“https://register.rockthevote.com/?partner=36729&source=embed-rtv234x60v1” class=“floatbox” data-fb-options=“width:618 height:max scrolling:yes”>
  <img src=“http://vr.rockthevote.com/images/widget/rtv-234x60-v1.gif” /> -->
 </a>
@@ -153,7 +158,7 @@
 
   <div class="row panel panel-info">
     <div class="panel-heading"><h1>Your Senators</h1></div>
-    <div class="panel-body">
+    <div class="coloredPanel panel-body">
       <div class="senatorInfo1 col-md-6 zoomin">
        <p class="senator1Pic"> </p>
         <ul class="repList">
@@ -179,7 +184,7 @@
 
   <div class="row panel panel-info">
     <div class="panel-heading"><h1>Your Representative</h1></div>
-    <div class="panel-body">
+    <div class="coloredPanel panel-body">
      <div class="repInfo col-md-4 col-md-offset-2 repZoomin">
       <p class="repPic"> </p>
         <ul class="repList">
@@ -205,44 +210,44 @@
 
 <!-- end results section -->
 
-<aside class="image-bg-fixed-height"></aside>
 
-<!--Here there be Widgets!-->
 
-<!--Register to Vote Button that takes you to a different page-->
-<div class="col-md-6 col-md-offset-3">
-<a href="https://register.rockthevote.com/?partner=36729&source=embed-rtv234x60v1">
-    <img src="http://vr.rockthevote.com/images/widget/rtv-234x60-v1.gif"/>
-</a>
-
-<script type="text/javascript" src="https://tool.votinginfoproject.org/app.js"></script>
-<div id="_vit"></div>
-<script type="text/javascript">vit.load({
-  modal: true,
-  officialOnly: false,
-  title: 'My Polling Place & Ballot Info',
-  width: '640px',
-  height: '480px',
-  colors: {
-    'header': '#229acd',
-    'landscapeBackgroundHeader': '#228a9d'
-  },
-  language: 'en',
-});</script>
-</div>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; The Bytemes 2017</p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; The Bytemes 2017</p>
+                </div>
             </div>
+            <!-- /.row -->
         </div>
-    </div>
-</footer>
+        <!-- /.container -->
+    </footer>
+
+</body>
+
+
+
+
+
+<script type="text/javascript">
+var modal = document.getElementById('myModal');
+  // When the user clicks on the button, open the modal 
+$('.modalBtn').on('click', function() {
+    modal.style.display = "block";
+  });
+// When the user clicks on <span> (x), close the modal
+$('span').on('click', function() {
+    modal.style.display = "none";
+});
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
 <script type="text/javascript" src="assets/javascript/app.js"></script>
 
-
-</body>
