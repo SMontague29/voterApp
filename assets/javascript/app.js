@@ -200,6 +200,37 @@ $('#resultsContainer').css("display","block");
 window.scrollBy(0, 2500);
 $('#myModal').css("display","none");
 
+      $(".senator1Name").empty();
+      $(".senator1Pic").empty();
+      $(".senator1Contact").empty();
+      $(".senator1Contact").empty();
+      $(".senator1Contact").empty();
+      $(".senator1Contact").empty();
+      $(".senator1Contact").empty();
+      $(".senator1Party").empty();
+      $(".senator1Last3").empty();
+      $(".senator1Top5").empty();
+      $(".senator2Name").empty();
+      $(".senator2Pic").empty();
+      $(".senator2Contact").empty();
+      $(".senator2Contact").empty();
+      $(".senator2Contact").empty();
+      $(".senator2Contact").empty();
+      $(".senator2Contact").empty();
+      $(".senator2Party").empty();
+      $(".senator2Last3").empty();
+      $(".senator2Top5").empty();
+      $(".repName").empty();
+      $(".repPic").empty();
+      $(".repContact").empty();
+      $(".repContact").empty();
+      $(".repContact").empty();
+      $(".repContact").empty();
+      $(".repContact").empty();
+      $(".repParty").empty();
+      $(".repLast3").empty();
+      $(".repTop5").empty();
+
     $(".senator1Pic").append("<img class='repImage' src='assets/images/CO.png'>");
     $(".senator1Contact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
     $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
