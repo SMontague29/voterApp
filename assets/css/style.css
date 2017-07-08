@@ -1,4 +1,3 @@
-
 .voteBox {
  box-shadow:10px 10px 25px 25px black; 
 
@@ -349,4 +348,17 @@ font-size: 150px;
 
 #_vit {
    box-shadow:20px 20px 50px 50px black; 
+}
+
+
+.name {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .senatorInfo2{
+    margin-top: 0;
+    max-width:none;
+  }
 }
