@@ -40,40 +40,41 @@ var isAllDataLoaded = function() {
 
 // This is where all of the rendering of the info from the API call needs to happen. It won't try to render until all the AJAX calls are complete
 var onAjaxLoadComplete = function() {
-  if (isAllDataLoaded()) {
+  if (isAll
+    DataLoaded()) {
 
-        $(".senator1Name").append(myFirstSenator.name);
+        $(".senator1Name").append("<p class='name'>"+ myFirstSenator.name + "</p>");
         $(".senator1Pic").append("<img class='repImage' src='" + myFirstSenator.imgSrc + "'>");
         $(".senator1Contact").append("<p> <a href='" + myFirstSenator.website + "' class='icons'> Access their Website </a> </p>")
         $(".senator1Contact").append("<a href='https://www.facebook.com/" + myFirstSenator.fb + "' class='icons'> <i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
         $(".senator1Contact").append("<a href='https://www.twitter.com/" + myFirstSenator.twitter + "' class='icons'> <i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
         $(".senator1Contact").append("<a href='https://www.youtube.com/" + myFirstSenator.youTube + "' class='icons' ><i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
-        $(".senator1Contact").append(myFirstSenator.phone)
-        $(".senator1Party").append("<p> party <br> <li>" + myFirstSenator.party + " </p>")
-        $(".senator1Last3").append("<p> last 3 <br> <li>" + myFirstSenator.topDonors + " </p>")
-        $(".senator1Top5").append("<p> Industries donating <br> <li>" + myFirstSenator.topIndustryDonors + "</p>")
+        $(".senator1Party").prepend("<p> P: </p>" + myFirstSenator.phone)
+        $(".senator1Party").append("<p> Party <br> <li>" + myFirstSenator.party + " </p>")
+        $(".senator1Last3").append("<p> Top Campaign Contributors <br> <li>" + myFirstSenator.topDonors + " </p>")
+        $(".senator1Top5").append("<p> Industries Donating <br> <li>" + myFirstSenator.topIndustryDonors + "</p>")
 
-        $(".senator2Name").append(mySecondSenator.name);
+        $(".senator2Name").append("<p class='name'>"+ mySecondSenator.name + "</p>");
         $(".senator2Pic").append("<img class='repImage' src='" + mySecondSenator.imgSrc + "'>");
         $(".senator2Contact").append("<p> <a href='" + mySecondSenator.website + "' class='icons'> Access their Website </a> </p>")
         $(".senator2Contact").append("<a href='https://www.facebook.com/" + mySecondSenator.fb + "' class='icons' ><i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
         $(".senator2Contact").append("<a href='https://www.twitter.com/" + mySecondSenator.twitter + "' class='icons'> <i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
         $(".senator2Contact").append("<a href='https://www.youtube.com/" + mySecondSenator.youTube + "' class='icons' ><i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
-        $(".senator2Contact").append(mySecondSenator.phone)
-        $(".senator2Party").append("<p> party <br> <li>" + mySecondSenator.party + " </p>")
-        $(".senator2Last3").append("<p> last 3 <br> <li>" + mySecondSenator.topDonors + " </p>")
-        $(".senator2Top5").append("<p> Industries donating <br> <li>" + mySecondSenator.topIndustryDonors + "</p>")
+        $(".senator2Party").prepend("<p> P: </p>" + mySecondSenator.phone)
+        $(".senator2Party").append("<p> Party <br> <li>" + mySecondSenator.party + " </p>")
+        $(".senator2Last3").append("<p> Top Campaign Contributors <br> <li>" + mySecondSenator.topDonors + " </p>")
+        $(".senator2Top5").append("<p> Industries Donating <br> <li>" + mySecondSenator.topIndustryDonors + "</p>")
 
-        $(".repName").append(myHouseRep.name);
+        $(".repName").append("<p class='name'>"+ myHouseRep.name + "</p>");
         $(".repPic").append("<img class='repImage' src='" + myHouseRep.imgSrc + "'>");
         $(".repContact").append("<p> <a href='" + myHouseRep.website + "' class='icons'> Access their Website </a> </p>")
         $(".repContact").append("<a href='https://www.facebook.com/"+ myHouseRep.fb + "' class='icons' ><i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
         $(".repContact").append("<a href='https://www.twitter.com/" + myHouseRep.twitter + "' class='icons'> <i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
         $(".repContact").append("<a href='https://www.youtube.com/" + myHouseRep.youTube + "' class='icons' ><i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
-        $(".repContact").append(myHouseRep.phone)
-        $(".repParty").append("<p> party <br> <li>" + myHouseRep.party + " </p>")
-        $(".repLast3").append("<p> last 3 <br> <li>" + myHouseRep.topDonors + " </p>")
-        $(".repTop5").append("<p> Industries donating <br> <li>" + myHouseRep.topIndustryDonors + "</p>")
+        $(".repParty").prepend("<p> P: </p>" + myHouseRep.phone)
+        $(".repParty").append("<p> Party <br> <li>" + myHouseRep.party + " </p>")
+        $(".repLast3").append("<p> Top Campaign Contributors <br> <li>" + myHouseRep.topDonors + " </p>")
+        $(".repTop5").append("<p> Industries Donating <br> <li>" + myHouseRep.topIndustryDonors + "</p>")
 
   };
 };
@@ -312,41 +313,6 @@ $('#myModal').css("display","none");
       $(".repParty").empty();
       $(".repLast3").empty();
       $(".repTop5").empty();
-
-      // function saveMe (){
-      //   $(".senator1Pic").append("<img class='repImage' src='assets/images/CO.png'>");
-      //   $(".senator1Contact").append("<p> <a href='" + myFirstSenator.website + "' class='icons'> www.placeholder.com </a> </p>")
-      //   $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
-      //   $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
-      //   $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
-      //   $(".senator1Contact").append("<a href='#' class='icons'> <i class='fa fa-phone-square' style='font-size:50px'></i><a href='#'>")
-      //   $(".senator1Party").append("<p> party </p>")
-      //   $(".senator1Last3").append("<p> last3 </p>")
-      //   $(".senator1Top5").append("<p> top5 </p>")
-
-
-      //   $(".senator2Pic").append("<img class='repImage' src='assets/images/CO.png'>");
-      //   $(".senator2Contact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
-      //   $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
-      //   $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
-      //   $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
-      //   $(".senator2Contact").append("<a href='#' class='icons' ><i class='fa fa-phone-square' style='font-size:50px'></i><a href='#'>")
-      //   $(".senator2Party").append("<p> party </p>")
-      //   $(".senator2Last3").append("<p> last3 </p>")
-      //   $(".senator2Top5").append("<p> top5 </p>")
-
-
-      //   $(".repPic").append("<img class='repImage' src='assets/images/CO.png'>");
-      //   $(".repContact").append("<p> <a href='www.github.com' class='icons'> www.placeholder.com </a> </p>")
-      //   $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-facebook-square' style='font-size:50px'></i></a>")
-      //   $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-twitter' style='font-size:50px'></i><a href='#'>")
-      //   $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-youtube' style='font-size:50px'></i><a href='#'>")
-      //   $(".repContact").append("<a href='#' class='icons' ><i class='fa fa-phone-square' style='font-size:50px'></i><a href='#'>")
-      //   $(".repParty").append("<p> party </p>")
-      //   $(".repLast3").append("<p> last3 </p>")
-      //   $(".repTop5").append("<p> top5 </p>")
-      // };
-
 
     localStorage.setItem("Name", voterName);
     localStorage.setItem("Street Number", voterStreetNumber);
