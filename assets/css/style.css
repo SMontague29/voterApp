@@ -1,32 +1,32 @@
 .voteBox {
- box-shadow:10px 10px 25px 25px black; 
+    box-shadow: 10px 10px 25px 25px black;
 
 }
 
 .icons {
-  color: black;
-  border: 0px;
-  text-align: center;
+    color: black;
+    border: 0px;
+    text-align: center;
 
 }
 
-.icons:hover {
-  color: green;
-}
+/*.icons:hover {*/
+/*color: green;*/
+/*}*/
 
 body {
-    margin-top: 50px; 
+    margin-top: 50px;
     background-color: black;
 
 }
 
 .navbar-brand {
-  position: relative;
-  bottom: 60px;
+    position: relative;
+    bottom: 60px;
 }
 
 li {
-   font-family: 'Varela Round', sans-serif;
+    font-family: 'Varela Round', sans-serif;
 }
 
 #voterAddress {
@@ -34,7 +34,6 @@ li {
     margin-left: auto;
     margin-right: auto;
 }
-
 
 .image-bg-fixed-height {
     text-align: center;
@@ -52,7 +51,7 @@ li {
 }
 
 .mapBackground {
-  background: url('../images/antique_map_us_small.jpeg') no-repeat center center scroll;
+    background: url('../images/antique_map_us_small.jpeg') no-repeat center center scroll;
 
 }
 
@@ -60,13 +59,11 @@ li {
     margin: 30px 0;
 }
 
-
 footer {
     margin: 50px 0;
     text-align: center;
     color: yellow;
 }
-
 
 h1, label {
     font-size: 25px;
@@ -77,7 +74,7 @@ h1, label {
 }
 
 label {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 h2 {
@@ -99,13 +96,14 @@ p {
     margin: 50px;
     background-color: #f2f2f2;
     border-radius: 200px;
-    z-index: 10; 
-    box-shadow:10px 10px 25px 25px black; 
-    
+    z-index: 10;
+    box-shadow: 10px 10px 25px 25px black;
+
 }
 
 .modal {
-    display: none;  Hidden by default 
+    display: none;
+    Hidden: by default;
     position: fixed; /* Stay in place */
     z-index: 2; /* Sit on top */
     left: 0;
@@ -113,8 +111,8 @@ p {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -142,11 +140,11 @@ p {
 }
 
 .alignLeft {
-  text-align: left;
+    text-align: left;
 }
 
 .legalFormat {
-  padding: 0 60px;
+    padding: 0 60px;
 }
 
 a {
@@ -155,44 +153,45 @@ a {
 }
 
 .button {
-  border-radius: 4px;
-  background-color: blue;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 15px;
-  padding: 8px;
-  width: 100%;
-  transition: all 0.5s;
-  cursor: pointer;
-font-family: 'Varela Round', sans-serif;
+    border-radius: 4px;
+    background-color: blue;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 8px;
+    width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family: 'Varela Round', sans-serif;
 }
 
 .button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
 }
 
 .button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
 }
 
 .button:hover span {
-  padding-right: 25px;
+    padding-right: 25px;
 }
 
 .button:hover span:after {
-  opacity: 1;
-  right: 0;
+    opacity: 1;
+    right: 0;
 }
-@media(max-width:600px) {
+
+@media (max-width: 600px) {
     section {
         padding-top: 25px;
         padding-bottom: 25px;
@@ -200,103 +199,95 @@ font-family: 'Varela Round', sans-serif;
 
 }
 
-
 #resultsContainer {
-  display: none;
-  background: url('../images/underground.jpg') repeat;
+    display: none;
+    background: url('../images/underground.jpg') repeat;
 
 }
 
-
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 .senatorInfo1, .senatorInfo2 {
-  border: 1px;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  width: 50%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: #f2f2f2;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #f2f2f2;
 
 }
 
 .senatorInfo1 {
-  position: relative;
-  right: 25px;
+    position: relative;
+    right: 25px;
 
 }
 
 .senatorInfo2 {
-  position: relative;
-  left: 25px;
+    position: relative;
+    left: 25px;
 }
 
-
 .repInfo {
-  border: 1px;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  width: 66.666%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: #f2f2f2;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 66.666%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #f2f2f2;
 }
 
 .fa {
 
-  margin: 5px 2px;
+    margin: 5px 2px;
 }
 
 .fa:hover {
     opacity: 0.7;
 }
 
-
 .repImage {
-  width: 30%;
-  height: auto;
-  float: left;
+    width: 30%;
+    height: auto;
+    float: left;
 }
-
 
 .repList {
-  float:right;
-  text-align: center;
-  /* clear:left; */
+    float: right;
+    text-align: center;
+    /* clear:left; */
 }
 
-.zoomin { 
-  -webkit-transition: all 2s ease; 
-  -moz-transition: all 2s ease; 
-  -ms-transition: all 2s ease; 
-  transition: all 2s ease; 
+/*.zoomin { */
+/*-webkit-transition: all 2s ease; */
+/*-moz-transition: all 2s ease; */
+/*-ms-transition: all 2s ease; */
+/*transition: all 2s ease; */
 
-} 
+/*} */
 
-.zoomin:hover { 
+/*.zoomin:hover { */
 
-  width: 40%;
-  height: auto; 
-}
+/*width: 40%;*/
+/*height: auto; */
+/*}*/
 
+/*.repZoomin { */
+/*-webkit-transition: all 2s ease; */
+/*-moz-transition: all 2s ease; */
+/*-ms-transition: all 2s ease; */
+/*transition: all 2s ease; */
+/*} */
 
-.repZoomin { 
-  -webkit-transition: all 2s ease; 
-  -moz-transition: all 2s ease; 
-  -ms-transition: all 2s ease; 
-  transition: all 2s ease; 
-} 
-
-.repZoomin:hover { 
-  width: 70%; 
-  margin-right: 10px;
-  height: auto; 
-}
-
-
+/*.repZoomin:hover { */
+/*width: 70%; */
+/*margin-right: 10px;*/
+/*height: auto; */
+/*}*/
 
 .clearButton {
     background-color: black;
@@ -307,58 +298,54 @@ ul {
 }
 
 .clearButton:hover {
-  background-color: yellow;
-  color: black;
+    background-color: yellow;
+    color: black;
 }
-
 
 .coloredPanel {
-background: url('../images/underground.jpg') repeat;
+    background: url('../images/underground.jpg') repeat;
 }
-
 
 .navLinks:hover {
-background-color: blue;
+    background-color: blue;
 }
-
-
 
 .marIcon {
-color: #1899b9;
-font-size: 150px;
+    color: #1899b9;
+    font-size: 150px;
 
 }
+
 .scottIcon {
-color: #18b938;
-font-size: 150px;
+    color: #18b938;
+    font-size: 150px;
 
 }
+
 .jessIcon {
-color: #b91899;
-font-size: 150px;
+    color: #b91899;
+    font-size: 150px;
 
 }
 
 .devIcon {
-color: #b93818;
-font-size: 150px;
+    color: #b93818;
+    font-size: 150px;
 
 }
-
 
 #_vit {
-   box-shadow:20px 20px 50px 50px black; 
+    box-shadow: 20px 20px 50px 50px black;
 }
 
-
 .name {
-  font-size: 50px;
-  font-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
-  .senatorInfo2{
-    margin-top: 0;
-    max-width:none;
-  }
+    .senatorInfo2 {
+        margin-top: 0;
+        max-width: none;
+    }
 }
